@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/logo_navi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="연속복합측위"
+            android:textColor="@color/main_black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/settingBtn"
+            app:layout_constraintTop_toTopOf="@id/iv_setting"
+            app:layout_constraintBottom_toBottomOf="@id/iv_setting"
+            app:layout_constraintLeft_toLeftOf="@id/iv_setting"
+            app:layout_constraintRight_toRightOf="@id/iv_setting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:src="@drawable/btn_setting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchbar"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/layout_bg_01"
+        android:backgroundTint="@color/pale_grey"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/iv_search_green"
+            android:src="@drawable/ic_search_green"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:id="@+id/tv_search"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_search_green"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="대상 실내 공간을 검색해주세요"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main"
+        app:layout_constraintTop_toBottomOf="@id/searchbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/ll_btns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_select"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="측위 종류 선택"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:layout_marginEnd="5dp"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_bg_01"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="측위 상세 정보"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_bg_03"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_select"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/layout_bg_01"
+        android:padding="2dp"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_btns"
+        app:layout_constraintStart_toStartOf="@id/ll_btns">
+
+        <LinearLayout
+            android:id="@+id/ll_all"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:clickable="true"
+            android:gravity="left|center"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_select_02"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="#7F00FF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:text="연속 복합 측위"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:gravity="left|center"
+                    android:background="@drawable/btn_select_01"/>
+
+                <Switch
+                    android:id="@+id/sch_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_fused"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:clickable="true"
+            android:gravity="left|center"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_select_02"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="#808080"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:text="Fused Location"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:gravity="left|center"
+                    android:background="@drawable/btn_select_01"/>
+
+                <Switch
+                    android:id="@+id/sch_fused"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_gnss"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:clickable="true"
+            android:gravity="left|center"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_select_02"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="#FF0000"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:text="GNSS 기반측위"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:gravity="left|center"
+                    android:background="@drawable/btn_select_01"/>
+
+                <Switch
+                    android:id="@+id/sch_gnss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_signal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:clickable="true"
+            android:gravity="left|center"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_select_02"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="#0000FF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:text="신호 기반 측위"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:gravity="left|center"
+                    android:background="@drawable/btn_select_01"/>
+
+                <Switch
+                    android:id="@+id/sch_signal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:clickable="true"
+            android:gravity="left|center"
+            android:stateListAnimator="@null"
+            android:background="@drawable/btn_select_02"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="#00FF00"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:text="영상지점측위"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:gravity="left|center"
+                    android:background="@drawable/btn_select_01"/>
+
+                <Switch
+                    android:id="@+id/sch_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="330dp"
+        android:layout_height="230dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/layout_bg_02"
+        android:elevation="5dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_btns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="영상지점측위"
+                android:textColor="@color/main_black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="left|center"/>
+            <ImageView
+                android:id="@+id/iv_info_close"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:padding="15dp"
+                android:src="@drawable/btn_close"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ScrollView
+            android:id="@+id/sv_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_info_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:paddingBottom="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/main_black"
+                android:gravity="left"/>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cam"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/layout_bg_03"
+        app:layout_constraintBottom_toTopOf="@+id/ll_btns"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/pv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/layout_bg_04"/>
+
+        <TextView
+            android:id="@+id/capture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/capture"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

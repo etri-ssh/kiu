@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font/font.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="contents">
+        <div class="map" id="map" style="background: #f6f8f8;">
+            <div class="compass" onclick="rotateNorth()"></div>
+            <ul class="step" style="display: none;">
+                <li onclick="upSlider()"><a class="top"></a></li>
+                <li class="floor">
+                    <ul><!-- <li><a></a></>li> --></ul>
+                </li>
+                <li onclick="downSlider()"><a class="bottom"></a></li>
+            </ul>
+            <ul class="type clearfix">
+                <li><a class="map_mod on" onclick="changeMapMode(0, this)">일반</a></li>
+                <li><a class="map_mod" onclick="changeMapMode(9, this)">항공</a></li>
+            </ul>
+            <ul class="map-size">
+                <li><a class="zoom-in" onclick="zoomIn()"></a></li>
+                <li><a class="zoom-out" onclick="zoomOut()"></a></li>
+            </ul>
+            <ul class="map-item">
+                <li><a class="location" onclick="location_icon_click()"></a></li>
+                <li><a class="capture" onclick="capture_icon_click()"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+
+<script src="./js/shp.js"></script> <!--read shp-->
+<script src="./js/jszip.min.js"></script> <!--zip file-->
+
+<script src="./js/proj4.js"></script>
+<script src="./js/ngii.js"></script> <!--E map -->
+<script src="./js/map.js"></script>
+<script src="./js/main.js"></script>
+
+<script src="./js/map-floor.js"></script>
+<script src="./js/slider.js"></script>
+<script src="./js/webview.js"></script>
+
+<script>
+    var firstCenter = true;
+    function setMarker(type, lon, lat) {
+        let rotate = [lon, lat];
+        console.log('[cubicinc] rotate : ',rotate);
+        if(type == 'red') { type = 'o'; }
+        else if(type == 'green') { type = 's'; }
+        else if(type == 'blue') { type = 't'; }
+        else if(type == 'gray') { type = 'g'; }
+        else if(type == 'result') { type = 'r'; }
+        drawSingleMarker(type, rotate);
+        if(firstCenter) {
+            firstCenter = false;
+            centerMove5186(rotate, 'EPSG:4326', null);
+        }
+    }
+</script>
+</body>
+</html>

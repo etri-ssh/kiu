@@ -1,0 +1,230 @@
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+$main-color: #0066a5;
+$gray-color: #616161;
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    .header {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        h1.main-logo {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 70px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 16px;
+            background: url(../images/main-logo.png) no-repeat 0% 50%/ 80%;
+        }
+        button.setting {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 60px;
+            height: 30px;
+            margin-top: 10px;
+            margin-right: 16px;
+            background: url(../images/icon-set.png) no-repeat 100% 50%/ 20px;
+        }
+        .main-tit {
+            padding-top: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+    }
+    .search-box {
+        width: 100%;
+        height: 80px;
+        padding: 16px;
+        box-sizing: border-box;
+        background-color: #fff;
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0 10px 0 40px;
+            box-sizing: border-box;
+            border: 0;
+            outline: 0;
+            border-radius: 5px;
+            background: #f6f8f8 url(../images/icon-search.png) no-repeat 3% 50%;
+        }
+    }
+    .contents {
+        width: 100%;
+        height: 100%;
+        // height: calc(100% - 130px);
+        .map {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .compass {
+                z-index: 1;
+                position: absolute;
+                top: 20px;
+                left: 16px;
+                width: 50px;
+                height: 50px;
+                background: #fff url(../images/icon-compass.png) no-repeat 50% / 50px ;
+                border-radius: 50px;
+                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+            }
+            .step {
+                z-index: 1;
+                position: absolute;
+                bottom: 100px;
+                left: 16px;
+                width: 50px;
+                height: auto;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+                > li a {
+                    &.on {background: #1a1e27; color: #fff;}
+                    &.top {background: url(../images/icon-arrow-top.png) no-repeat 50% / 60px;}
+                    &.bottom {background: url(../images/icon-arrow-bottom.png) no-repeat 50% / 60px; border-bottom: 0;}
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                    border-bottom: 1px solid #f0f0f0f0;
+                    color: $gray-color;
+                    letter-spacing: 1px;
+                }
+                > .floor {
+                    max-height: 153px;
+                    overflow: hidden;
+                    font-size: 8px;
+                }
+            }
+            .type {
+                z-index: 1;
+                position: absolute;
+                top: 20px;
+                right: 16px;
+                width: auto;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+                overflow: hidden;
+                > li{
+                    float: left;
+                    a {
+                        &.on {background-color: $main-color; color: #fff;}
+                        display: block;
+                        width: 50px;
+                        height: 50px;
+                        text-align: center;
+                        line-height: 50px;
+                        color: $gray-color;
+                    }
+                } 
+            }
+            .map-size {
+                z-index: 1;
+                position: absolute;
+                top: 120px;
+                right: 16px;
+                width: 50px;
+                height: auto;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+                li a {
+                    &.zoom-in {
+                        background: url(../images/icon-plus.png) no-repeat 50%;
+                        border-bottom: 1px solid #f0f0f0f0;
+                    }
+                    &.zoom-out {
+                        background: url(../images/icon-minus.png) no-repeat 50%;
+                    }
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .map-item {
+                z-index: 1;
+                position: absolute;
+                top: 300px;
+                right: 16px;
+                width: 50px;
+                height: auto;
+                li a {
+                    &.location {
+                        background: #fff url(../images/icon-location.png) no-repeat 50% / 30px;
+                        &.map-on { background: #fff url(../images/icon-location-on.png) no-repeat 50% / 30px; }
+                        border-bottom: 1px solid #f0f0f0f0;
+                        margin-bottom: 16px;
+                    }
+                    &.capture {
+                        background: #fff url(../images/icon-capture-off.png) no-repeat 50% / 50px;
+                        &.on {background: #fff url(../images/icon-capture-on.png) no-repeat 50% / 50px;}
+                    }
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+                }
+            }
+            .main-bottom {
+                z-index: 1;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                display: flex;
+                width: 100%;
+                max-width: 420px;
+                height: auto;
+                padding: 20px 16px;
+                box-sizing: border-box;
+                .select{
+                    position: relative;
+                    width: 60%;
+                    margin-right: 16px;
+                    box-sizing: border-box; 
+                    span {
+                        display: block;
+                        height: 60px;
+                        padding: 0 54px 0 20px;
+                        box-sizing: border-box;
+                        line-height: 60px;
+                        color: #fff;
+                        border-radius: 10px;
+                        background: $main-color url(../images/icon-mini-arrow-bottom.png) no-repeat 90% 50% ;
+                    }
+                    ul {
+                        position: absolute;
+                        top: -100px;
+                        width: 100%;
+                        background-color: #fff;
+                        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+                    }
+                }
+                .detail {
+                    z-index: 1;
+                    width: 40%;
+                    height: 60px;
+                    color: #fff;
+                    background: #9299aa;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

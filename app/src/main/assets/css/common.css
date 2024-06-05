@@ -1,0 +1,241 @@
+html, body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+.wrap .header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+}
+.wrap .header h1.main-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 70px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 16px;
+  background: url(../images/main-logo.png) no-repeat 0% 50%/80%;
+}
+.wrap .header button.setting {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 60px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 16px;
+  background: url(../images/icon-set.png) no-repeat 100% 50%/20px;
+}
+.wrap .header .main-tit {
+  padding-top: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 800;
+}
+.wrap .search-box {
+  width: 100%;
+  height: 80px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.wrap .search-box input {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 0 40px;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  background: #f6f8f8 url(../images/icon-search.png) no-repeat 3% 50%;
+}
+.wrap .contents {
+  width: 100%;
+  height: 100%;
+}
+.wrap .contents .map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.wrap .contents .map .compass {
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  width: 50px;
+  height: 50px;
+  background: #fff url(../images/icon-compass.png) no-repeat 50%/50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+}
+.wrap .contents .map .step {
+  z-index: 1;
+  position: absolute;
+  bottom: 100px;
+  left: 16px;
+  width: 50px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+}
+.wrap .contents .map .step > li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.9411764706);
+  color: #616161;
+  letter-spacing: 1px;
+}
+.wrap .contents .map .step > li a.on {
+  background: #1a1e27;
+  color: #fff;
+}
+.wrap .contents .map .step > li a.top {
+  background: url(../images/icon-arrow-top.png) no-repeat 50%/60px;
+}
+.wrap .contents .map .step > li a.bottom {
+  background: url(../images/icon-arrow-bottom.png) no-repeat 50%/60px;
+  border-bottom: 0;
+}
+.wrap .contents .map .step > .floor {
+  max-height: 153px;
+  overflow: hidden;
+  font-size: 8px;
+}
+.wrap .contents .map .type {
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  width: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+}
+.wrap .contents .map .type > li {
+  float: left;
+}
+.wrap .contents .map .type > li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #616161;
+}
+.wrap .contents .map .type > li a.on {
+  background-color: #0066a5;
+  color: #fff;
+}
+.wrap .contents .map .map-size {
+  z-index: 1;
+  position: absolute;
+  top: 120px;
+  right: 16px;
+  width: 50px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+}
+.wrap .contents .map .map-size li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.wrap .contents .map .map-size li a.zoom-in {
+  background: url(../images/icon-plus.png) no-repeat 50%;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.9411764706);
+}
+.wrap .contents .map .map-size li a.zoom-out {
+  background: url(../images/icon-minus.png) no-repeat 50%;
+}
+.wrap .contents .map .map-item {
+  z-index: 1;
+  position: absolute;
+  top: 300px;
+  right: 16px;
+  width: 50px;
+  height: auto;
+}
+.wrap .contents .map .map-item li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+}
+.wrap .contents .map .map-item li a.location {
+  background: #fff url(../images/icon-location.png) no-repeat 50%/30px;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.9411764706);
+  margin-bottom: 16px;
+}
+.wrap .contents .map .map-item li a.location.map-on {
+  background: #fff url(../images/icon-location-on.png) no-repeat 50%/30px;
+}
+.wrap .contents .map .map-item li a.capture {
+  background: #fff url(../images/icon-capture-off.png) no-repeat 50%/50px;
+}
+.wrap .contents .map .map-item li a.capture.on {
+  background: #fff url(../images/icon-capture-on.png) no-repeat 50%/50px;
+}
+.wrap .contents .map .main-bottom {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
+.wrap .contents .map .main-bottom .select {
+  position: relative;
+  width: 60%;
+  margin-right: 16px;
+  box-sizing: border-box;
+}
+.wrap .contents .map .main-bottom .select span {
+  display: block;
+  height: 60px;
+  padding: 0 54px 0 20px;
+  box-sizing: border-box;
+  line-height: 60px;
+  color: #fff;
+  border-radius: 10px;
+  background: #0066a5 url(../images/icon-mini-arrow-bottom.png) no-repeat 90% 50%;
+}
+.wrap .contents .map .main-bottom .select ul {
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.09);
+}
+.wrap .contents .map .main-bottom .detail {
+  z-index: 1;
+  width: 40%;
+  height: 60px;
+  color: #fff;
+  background: #9299aa;
+  border-radius: 10px;
+}/*# sourceMappingURL=common.css.map */

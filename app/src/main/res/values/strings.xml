@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">CCP</string>
+
+    <string-array name="importer">
+        <item>PPHQ</item>
+        <item>PPIH</item>
+        <item>PPDJ</item>
+        <item>PPIS</item>
+    </string-array>
+
+    <string-array name="ImporterPosition">
+        <item>-3041232.493,4053906.693,3859927.421</item> <!--PPHQ-->
+        <item>-3026675.52678285,4067188.30571315,3857246.74822518</item> <!--PPIH-->
+        <item>-3120042.52,4084614.629,3764026.749</item> <!--PPDJ-->
+        <item>-3145124.932,4129651.267,3694078.205</item> <!--PPIS-->
+    </string-array>
+
+    <string-array name="ImporterMount">
+        <item>PPHQ</item>
+        <item>PPIH</item>
+        <item>PPDJ</item>
+        <item>PPIS</item>
+    </string-array>
+
+    <string-array name="mapRadius">
+        <item>2M</item>
+        <item>3M</item>
+        <item>4M</item>
+        <item>5M</item>
+    </string-array>
+
+    <!-- version 1 -->
+    <!--    <string-array name="importer">-->
+    <!--        <item>OBS</item>-->
+    <!--        <item>PPHQ</item>-->
+    <!--        <item>PPIH</item>-->
+    <!--        <item>PPDJ</item>-->
+    <!--    </string-array>-->
+
+    <!--    <string-array name="ImporterPosition">-->
+    <!--        <item>-3041232.422,4053906.697,3859927.415</item> &lt;!&ndash;obs &ndash;&gt;-->
+    <!--        <item>-3041232.422,4053906.697,3859927.415</item> &lt;!&ndash;PPHQ&ndash;&gt;-->
+    <!--        <item>-3026675.78452747,4067188.06255540,3857247.04921144</item> &lt;!&ndash;PPIH&ndash;&gt;-->
+    <!--        <item>-3120042.4640,4084614.6540,3764026.7660</item> &lt;!&ndash;PPDJ&ndash;&gt;-->
+    <!--    </string-array>-->
+
+    <!--    <string-array name="ImporterMount">-->
+    <!--        <item>obs</item>-->
+    <!--        <item>pphq</item>-->
+    <!--        <item>ppih</item>-->
+    <!--        <item>ppdj</item>-->
+    <!--    </string-array>-->
+
+
+    <!-- string -->
+    <string name="title">연속복합측위</string>
+    <string name="normal">일반</string>
+    <string name="airline">항공</string>
+    <string name="floor">F</string>
+    <string name="search_hint">대상 실내 공간을 검색해주세요.</string>
+    <string name="dropdown_title">측위 종류 선택</string>
+    <string name="info_btn">측위 상세 정보</string>
+    <string name="gnss_name">GNSS 기반측위</string>
+    <string name="signal_name">신호 및 지자기 측위</string>
+    <string name="cam_name">영상지점측위</string>
+    <string name="info_toast">측위 종류 선택 후 버튼이 활성화 됩니다.</string>
+    <string name="capture">캡처</string>
+    <string name="cam_toast">현재 영상지점측위를 사용할 수 있습니다.</string>
+    <string name="search_title">대상 실내 공간을</string>
+    <string name="search_subtitle">입력해주세요.</string>
+    <string name="search_result">검색결과</string>
+    <string name="setting_title">설정</string>
+    <string name="setting_basic_btn">기본값</string>
+    <string name="setting_save_btn">저장</string>
+    <string name="setting_log_title">로그 경로</string>
+    <string name="setting_mac_title">MAC</string>
+    <string name="setting_map_title">지도화면 가시화 설정</string>
+    <string name="URL">URL</string>
+    <string name="ID">ID</string>
+    <string name="PWD">PWD</string>
+    <string name="PNG">PNG</string>
+    <string name="JPG">JPG</string>
+    <string name="setting_cam">영상 측위 설정</string>
+    <string name="cam_resolution">해상도</string>
+
+    <!--    <string name="info_test">정부가 향후 5년간 국가공간정보 정책 수립에 3조 8000억원을 투자한다. 이를 통해 오는 2027년 공간정보 분야 국가경쟁력  10위권에 진입하겠다는 목표다.\n국토교통부는 향후 5년(2023~2027년)간의 국가공간정보 정책 추진방향을 제시하는 &apos;제7차 국가공간정보정책 기본계획&apos;을 확정했다고 22일 밝혔다.\n국가공간정보정책 기본계획은 국가공간정보기본법에 따라 수립되는 공간정보 분야의 최상위 법정 계획으로</string>-->
+</resources>

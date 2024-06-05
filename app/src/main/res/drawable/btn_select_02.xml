@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 버튼이 눌렸을 때 -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#EDF4F9"/>
+            <corners
+                android:topLeftRadius="10dp"
+                android:topRightRadius="10dp"
+                android:bottomLeftRadius="10dp"
+                android:bottomRightRadius="10dp"/>
+            <padding
+                android:left="10dp"
+                android:right="10dp"/>
+        </shape>
+    </item>
+
+    <!-- 버튼이 안 눌렸을 때(디폴트) -->
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="#FFFFFF"/>
+            <corners
+                android:topLeftRadius="10dp"
+                android:topRightRadius="10dp"
+                android:bottomLeftRadius="10dp"
+                android:bottomRightRadius="10dp"/>
+            <padding
+                android:left="10dp"
+                android:right="10dp"/>
+        </shape>
+    </item>
+</selector>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <item-->
+<!--        android:state_pressed="true"-->
+<!--        android:drawable="@drawable/btn_bg_04"-->
+<!--        android:color="#0E6EAA"/>-->
+<!--    <item-->
+<!--        android:state_pressed="false"-->
+<!--        android:drawable="@drawable/btn_bg_03"-->
+<!--        android:color="@color/black"/>-->
+<!--</selector>-->

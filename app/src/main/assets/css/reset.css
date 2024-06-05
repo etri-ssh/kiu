@@ -1,0 +1,82 @@
+@charset "utf-8";
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+body {font-family: 'PRETENDARD', sans-serif; font-size: 13px;}
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0;font-family: 'PRETENDARD', sans-serif ;}
+fieldset,img{border:0 none;font-family: 'PRETENDARD', sans-serif !important;}
+dl,ul,ol,menu,li{list-style:none;font-family: 'PRETENDARD', sans-serif !important;}
+blockquote, q{quotes: none;font-family: 'PRETENDARD', sans-serif !important;}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none;font-family: 'PRETENDARD', sans-serif ;}
+input,select,textarea,button{border-radius:0;vertical-align:middle;font-family: 'PRETENDARD', sans-serif;}
+input::-ms-clear{display:none;font-family: 'PRETENDARD', sans-serif ;}
+button{border:0 none;background-color:transparent;cursor:pointer;font-family: 'PRETENDARD', sans-serif ;}
+body{background:#fff;direction:ltr;-webkit-text-size-adjust:none;font-family: 'PRETENDARD', sans-serif ;}
+body,th,td,input,select,textarea,button{font-size:14px;line-height:1.5;font-family: 'PRETENDARD', sans-serif ;color:#222;letter-spacing:-0.5px;font-weight:600;}
+.os_mac body,.os_mac th,.os_mac td,.os_mac input,.os_mac select,.os_mac textarea,.os_mac button{letter-spacing:0}
+a{color:#222;text-decoration:none;font-family: 'PRETENDARD', sans-serif !important;}
+a:hover{color:none;text-decoration:none;font-family: 'PRETENDARD', sans-serif ;}
+a:active{background-color:transparent;font-family: 'PRETENDARD', sans-serif ;}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;font-family: 'PRETENDARD', sans-serif ;}
+table {border-collapse: collapse; border-spacing: 0;font-family: 'PRETENDARD', sans-serif ;}
+
+
+/* Skip area */
+#Skip-navigation {position: absolute; left: 0; top: -100px; z-index: 1001; width: 100%; height: 60px; line-height: 60px; text-align: center; font-size: 20px; color: #fff; transition: all 0.5s; background: #666;}
+#Skip-navigation:focus { top:0;}
+
+/* ir */
+.ir {width:0; height:0; overflow:hidden; font-size:0; line-height:0; position:absolute; left:0; top:0;}
+
+/* clearfix */
+.clearfix {*zoom:1;}
+.clearfix:before, .clearfix:after {display:block; content:'';line-height: 0;}
+.clearfix:after {clear:both;}
+
+/* input */
+
+input { 
+-webkit-appearance : none;
+-moz-appearance:none;
+appearance:none;
+}
+
+/* IE10 input box */
+input::-ms-clear { display:none;}
+
+/* input type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-out-spin-button {
+-webkit-appearance: none;
+-moz-appearance:none;
+appearance:none;
+}
+
+/* select box */
+select {
+-webkit-appearance: none;
+-moz-appearance:none;
+appearance:none;
+}
+/* IE Select box */
+select::-ms-expand { display:none; }
+
+/*Firefox input number*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+/* -mox-appearance: none; */
+appearance: none;
+}
+
+input::placeholder {
+    color: rgb(207, 207, 207);
+    font-size: 12px;
+    font-weight: 400;
+}
+textarea::placeholder {
+    color: rgb(207, 207, 207);
+    font-size: 12px;
+    font-weight: 400;
+}

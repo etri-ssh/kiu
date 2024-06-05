@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body, .map {
+		    margin: 0;
+		    padding: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+        .mapBtn {
+            position: absolute;
+            width: 100px;
+            height: 105px;
+            right: 0px;
+            z-index: 1000000;
+            
+        }
+        .mapList {
+            float: left;
+            width: 100%;
+            height: 25px;
+            margin-top: 10px;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .mapControl{
+            position:absolute;
+            top:105px;
+            width:100px;
+            height:200px;
+            z-index:1000000;
+        }
+        .mapControl ul{
+            padding:0 0 0 0;
+            margin:0 0 0 0;
+            list-style:none outside none;
+        }
+        .mapControl ul li{
+            padding:0 0 0 0;
+            /* margin:0 0 0 0; */
+            background-color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .left{
+            left:0px;
+        }
+        .right{
+            right:0px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
+
+    
+</head>
+
+<body>
+    <div id="map" class="map" >
+
+        <div class="mapBtn">
+            <div class="mapList" onclick="changeMapMode(0)">일반지도</div>
+            <div class="mapList" onclick="changeMapMode(9)">항공지도</div>
+            <!-- <div class="mapList" onclick="changeMapMode(9, true)">하이브리드</div> -->
+        </div>
+
+        <div class="mapControl right">
+                <ul>
+                    <li class="testBtn" name="" title="" onclick="zoomIn()">+</li>
+                    <li class="testBtn" name="" title="" onclick="zoomOut()">-</li>
+
+                    <li class="testBtn" name="" title="" onclick="drawGeoJSON(0)">1층</li>
+                    <li class="testBtn" name="" title="" onclick="drawGeoJSON(1)">2층</li>
+                    <li class="testBtn" name="" title="" onclick="drawGeoJSON(2)">3층</li>
+
+                    <li class="testBtn" name="" title="" onclick="drawSingleMarker('o', rotate);">o</li>
+                    <li class="testBtn" name="" title="" onclick="drawSingleMarker('s', rotate);">s</li>
+                    <li class="testBtn" name="" title="" onclick="drawSingleMarker('t', rotate);">t</li>
+                    <li class="testBtn" name="" title="" onclick="removeLayer()">지우기</li>
+                </ul>
+        </div>
+
+        <div class="mapControl left">
+            <ul>
+                <li class="testBtn" name="" title="" onclick="rotateNorth()">나침반</li>
+            </ul>
+        </div>
+    </div>
+    
+
+
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+    
+    <script src="shp.js"></script> <!--read shp-->
+    <script src="jszip.min.js"></script> <!--zip file-->
+    
+    <script src="proj4.js"></script> 
+    <script src="ngii.js"></script> <!--E map -->
+    <script src="map.js"></script>  
+    <script src="main.js"></script> 
+
+    <script>
+        let rotate = [988028.0018956577, 1820481.184068222];
+        
+        let rotateListo = [[988222.3118956577, 1820499.289068222]
+                            ,[988222.5668956577, 1820494.699068222]
+                            ,[988222.8218956577, 1820487.049068222]
+                            ,[988222.5668956577, 1820478.8890682221]
+                            ,[988222.8218956577, 1820470.474068222]
+                            ,[988222.8218956577, 1820458.7440682221]
+                            ,[988223.3318956577, 1820448.799068222]];
+        let rotateLists = [[988238.1218956577, 1820500.309068222]
+                            ,[988237.6118956577, 1820494.699068222]
+                            ,[988237.6118956577, 1820487.814068222]
+                            ,[988237.3568956577, 1820479.9090682222]
+                            ,[988236.5918956577, 1820471.4940682221]
+                            ,[988236.5918956577, 1820459.509068222]
+                            ,[988236.8468956577, 1820449.054068222]];
+        let rotateListt = [[988256.2268956577, 1820500.819068222]
+                            ,[988256.2268956577, 1820494.189068222]
+                            ,[988256.9918956577, 1820487.814068222]
+                            ,[988256.7368956577, 1820478.8890682221]
+                            ,[988256.4818956577, 1820470.729068222]
+                            ,[988255.9718956577, 1820458.999068222]
+                            ,[988256.4818956577, 1820449.564068222]];
+        
+
+
+        rotate = [127.36651997217162, 36.38171818949036];
+        rotateListo =  [[127.36868612327213, 36.381883813375445], [127.36868903592543, 36.38184243607143], [127.36869199495376, 36.381773471813894], [127.36868927555112, 36.38169990347966], [127.36869224616792, 36.381624042481945], [127.36869242394911, 36.38151829249094], [127.36869826081124, 36.38142864113839]]
+        rotateLists = [[127.36886237905495, 36.381893202662546], [127.36885677780604, 36.38184262033979], [127.36885688202608, 36.38178054969499], [127.36885415860783, 36.381709280277086], [127.36884575676442, 36.38163340678985], [127.36884593819812, 36.381525357885465], [127.36884893953705, 36.381431105578024]]
+        rotateListt = [[127.3690642303532, 36.381898021913244], [127.36906433055469, 36.38183825018128], [127.36907295614353, 36.38178078670997], [127.36907024794291, 36.38170032164527], [127.3690675281863, 36.38162675331802], [127.36906201931734, 36.38152099709301], [127.36906784804803, 36.38143594354747]]
+
+
+        //rotate = [127.126890543288,37.41819915124965];
+
+
+        drawSingleMarker('o', rotate);
+        setCenter(rotate);
+<!--        drawMultiMarker('o', rotateListo);-->
+<!--        drawMultiMarker('s', rotateLists);-->
+<!--        drawMultiMarker('t', rotateListt);-->
+
+        var flag = true;
+
+        function setMarker(type, lat, lon) {
+            let rotate = [lon, lat];
+            if(flag) {
+                flag = false;
+                setCenter(rotate);
+            }
+            console.log('cubicinc setMarker rotate : ', rotate);
+            drawSingleMarker(type, rotate);
+        }
+    </script>
+    
+</body>
+
+</html>
